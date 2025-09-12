@@ -44,7 +44,7 @@
         margin: auto;
     }
     body img {
-        max-width: 75%;
+        max-width: 100%;
         height: auto;
         display: block;
         margin: auto;
@@ -52,14 +52,13 @@
         border-radius: 6px;
     }
 
-    #title-images {
+    #title-images, #MAB {
         display:grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
     }
-    #title-images img {
+    #MAB img {
         max-width: 100%;
-        height: auto;
     }
     </style>
 </head>
@@ -95,15 +94,29 @@
             </b>
         </section>
         <p>
-            TankTinker was a design in response to a direct competitor in online aquarium planning tools, MyAquariumBuilder.
+            TankTinker was a design in response to existing solutions in online aquarium planning tools, such as MyAquariumBuilder.
             A major pain point of using MyAquariumBuilder was that when adding compontents such as livestock (fish, etc.), vegetation, and substrate;
             selecting a component led to its page detailing recommmended conditions and compatibility.
             Due to having to cross reference each of the pages, <b>as the amount of components added increased, insuring cross-compatibility sharply became more difficult to manage.</b>
         </p>
+        <div id="MAB">
+            <img src="images/MABacaraOverview.png" alt="MyAquariumBuilder Acara Page Overview">
+            <img src="images/MABreference1.png" alt="MyAquariumBuilder Main Page List">
+        </div>
         <p>
-            
-        </p>
-    </main>
+            The screenshots from MyAquariumBuilder above show the overview that exists on the Acara's page, but after you add it to your aquarium, there are no details.
+            The acara should not be part of a 23 gallon tank, as the acara needs a minimum of 39.6 gallons.
+        </p><br>         
+        <b>
+            Approach
+        </b>
+        <p>
 
+            Referencing the commonality of mental maps in order to create understanding through spatial relationships, we aimed to create a tool that would allow users to visualize the relationships between components in their aquarium.
+            These relationships should be easy to understand at a glance if a component works with another.
+        </p>
+        <p>
+            We also aimed the user experience to accommodate the onboarding of novice aquarium planners by having a guided step-by-step process.
+    </main>
 </body>
 </html> 
