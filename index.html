@@ -52,13 +52,45 @@
         border-radius: 6px;
     }
 
-    #title-images, #MAB {
+    #title-images, #MAB, #Screenshots {
         display:grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
     }
     #MAB img {
         max-width: 100%;
+    }
+
+    #Screenshots[lvl="r1"] {
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 15px;
+    }
+
+    #Screenshots[lvl="r2"] {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        max-width: 75%;
+        margin-left: 15%;
+    }
+
+    #lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    #lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
     </style>
 </head>
@@ -122,15 +154,40 @@
             Then they continue on to adding from different categories of substrate, rocks, plants, and other decor;
             in order to ease them into the different components that go into the aquarium.
         </p>
-        <img src="images/start-param.png">
-        <img src="images/tank-select.png">
-        <img src="images/water-select.png">
-        <img src="images/fish-select.png">
-        <img src="images/decor-select-rock.png" alt="TankTinker Rock Selection UI">
+        <div id="Screenshots" lvl="r1">
+            <img src="images/start-param.png">
+            <img src="images/tank-select.png">
+            <img src="images/water-select.png">
+        </div>
+        <div id="Screenshots" lvl="r2">
+            <img src="images/fish-select.png">
+            <img src="images/decor-select-rock.png" alt="TankTinker Rock Selection UI">            
+        </div>
 
         <p> 
             With the components that the user has selected, TankTinker moves to the visualizer part that displays the relationships between
         </p>
+
+
+
     </main>
+    <div id="lightbox">
+        <span>&times;</span>
+        <img src="" alt="">
+    </div>
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+
+        document.querySelectorAll('#Screenshots img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) lightbox.style.display = 'none';
+        });
+    </script>
 </body>
 </html> 
