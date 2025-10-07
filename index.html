@@ -52,7 +52,7 @@
         border-radius: 6px;
     }
 
-    #title-images, #MAB, #Screenshots {
+    #title-images, #MAB, #Screenshots, #fish-map {
         display:grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
@@ -140,7 +140,7 @@
             The acara should not be part of a 23 gallon tank, as the acara needs a minimum of 39.6 gallons.
         </p><br>         
         <b>
-            Approach
+            Design Approach
         </b>
         <p>
 
@@ -165,16 +165,23 @@
         </div>
 
         <p> 
-            With the components that the user has selected, TankTinker moves to the visualizer part that displays the relationships between
+            With the components that the user has selected, TankTinker moves to the visualizer aspect that displays the relationships between selected components.
+            Clicking on a component will give relevant information and highlight its direct relationships with other components.
         </p>
+        <div id="fish-map">
+            <img src="images/fishmap1.png">
+            <img src="images/fishmap2.png">
+        </div>        
 
 
 
     </main>
+
     <div id="lightbox">
         <span>&times;</span>
         <img src="" alt="">
     </div>
+
     <script>
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = lightbox.querySelector('img');
